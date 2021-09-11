@@ -172,7 +172,7 @@ export default {
 
 .tag-picker {
   border: none;
-  min-height: 7.5rem;
+  min-height: 9.5rem;
   padding: 1rem;
   border-radius: inherit;
 
