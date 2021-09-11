@@ -16,13 +16,12 @@
 
         <transition name="fade">
           <template v-if="(hover || adding) && !loading">
-            <div
-              v-if="!adding"
-              class="add-tag"
-              @click="adding = true"
-            >
-              <b-icon icon="plus" aria-hidden="true"></b-icon>
-              <span class="sr-only">Add</span>
+            <div v-if="!adding" class="add-tag-container">
+              <div class="add-tag" @click="adding = true">
+                <b-icon icon="plus" aria-hidden="true"></b-icon>
+                <span class="sr-only">Add</span>
+              </div>
+              <span class="hover-text" aria-hidden="true">ADD</span>
             </div>
             <div class="new-tag" v-if="adding">
               <b-form-input
@@ -173,6 +172,29 @@ export default {
     margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .add-tag-container {
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .hover-text {
+      margin-left: 0.5rem;
+      opacity: 0;
+      transition: 0.3s ease;
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: $medpurple;
+      letter-spacing: 1px;
+    }
+
+    &:hover {
+      .hover-text {
+        opacity: 1;
+      }
+    }
   }
 
   .add-tag {
