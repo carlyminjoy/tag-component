@@ -1,6 +1,8 @@
 <template>
-  <div id="app" class="container shadow">
-    <TagPicker :userUuid="userUuid" />
+  <div id="app">
+    <div class="container shadow">
+      <TagPicker :userUuid="userUuid" />
+    </div>
   </div>
 </template>
 
@@ -35,6 +37,11 @@ html {
   line-height: 1.6;
   letter-spacing: 0em;
   padding: 0;
+
+  .container {
+    padding: 0;
+    border-radius: 1.6rem;
+  }
 }
 
 .fade-enter-active,

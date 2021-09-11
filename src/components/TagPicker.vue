@@ -166,9 +166,15 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/colors.scss";
 
+.b-overlay-wrap {
+  border-radius: inherit;
+}
+
 .tag-picker {
   border: none;
-  min-height: 9.5rem;
+  min-height: 7.5rem;
+  padding: 1rem;
+  border-radius: inherit;
 
   .card-title {
     font-weight: 700;
@@ -210,10 +216,10 @@ export default {
     display: flex;
     align-content: center;
     justify-content: center;
-    background: $offwhite;
+    background: $lightpurple;
     width: 2.375rem;
     color: $lightgray;
-    border: 1px solid $offwhite;
+    border: 1px solid $lightpurple;
     padding: 0.125rem;
     cursor: pointer;
     transition: 0.3s ease;
@@ -263,11 +269,11 @@ export default {
         line-height: 1rem;
         font-weight: 700;
         color: $lightgray;
-        transition: 0.3s cubic-bezier(0.2, 0, 0.1, 1);
+        transition: 0.3s ease;
         cursor: pointer;
 
         &:hover {
-          background: $offwhite;
+          background: $lightpurple;
           color: $medpurple;
         }
 
@@ -283,7 +289,7 @@ export default {
         .b-icon {
           height: 1.5rem;
           width: 1.5rem;
-          background: $offwhite;
+          background: $lightpurple;
           border-radius: 50%;
           margin-right: 0.75rem;
           color: $medpurple;
