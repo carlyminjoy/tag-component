@@ -171,6 +171,7 @@ export default {
   .tags {
     margin-top: 1.5rem;
     display: flex;
+    flex-wrap: wrap;
   }
 
   .add-tag {
@@ -180,12 +181,13 @@ export default {
     align-content: center;
     justify-content: center;
     background: $offwhite;
-    width: 40px;
+    width: 38px;
     color: $lightgray;
     border: 1px solid $offwhite;
     padding: 0.125rem;
     cursor: pointer;
     transition: 0.3s ease;
+    height: 38px;
 
     &:hover {
       color: $medpurple;
