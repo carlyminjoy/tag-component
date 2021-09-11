@@ -17,7 +17,7 @@
         <transition name="fade">
           <template v-if="(hover || adding) && !loading">
             <div v-if="!adding" class="add-tag-container">
-              <div class="add-tag" @click="adding = true">
+              <div class="add-tag" @click="showNewTagInput">
                 <b-icon icon="plus" aria-hidden="true"></b-icon>
                 <span class="sr-only">Add</span>
               </div>
@@ -25,6 +25,7 @@
             </div>
             <div class="new-tag" v-if="adding">
               <b-form-input
+                ref="newTagInput"
                 v-model="newTag"
                 @keyup.enter="addTag(newTag)"
                 @blur="closeDropdown"
@@ -151,6 +152,12 @@ export default {
       // or selecting a tag to add
       if (this.newTag !== "") return;
       this.adding = false;
+    },
+    showNewTagInput() {
+      this.adding = true;
+      this.$nextTick(() => {
+        this.$refs.newTagInput.focus();
+      });
     },
   },
 };
