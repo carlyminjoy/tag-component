@@ -58,6 +58,7 @@ export default {
   padding: 0.4rem 1rem;
   font-weight: 700;
   margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
   line-height: 1.5rem;
   display: flex;
   align-items: center;

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="container shadow">
     <TagPicker :userUuid="userUuid" />
   </div>
 </template>
@@ -22,16 +22,19 @@ export default {
 
 <style lang="scss">
 @import "@/scss/colors.scss";
+html {
+  font-size: 14px;
+}
 
 #app {
   font-family: "objektiv-mk2", avenir;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $darkblue;
-  margin-top: 60px;
+  margin-top: 6rem;
   line-height: 1.6;
   letter-spacing: 0em;
-  font-size: 16px;
+  padding: 0;
 }
 
 .fade-enter-active,

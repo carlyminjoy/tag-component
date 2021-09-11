@@ -54,7 +54,7 @@ const tagColors = [
   },
   {
     background: "#B4409B",
-    text: "#da80ce",
+    text: "#FFCDFF",
   },
   {
     background: "#B7EDD5",
@@ -67,7 +67,7 @@ const tagColors = [
   },
   {
     background: "#4654B2",
-    text: "#8E9EDF",
+    text: "#BACAF7",
   },
 ];
 

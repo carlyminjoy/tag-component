@@ -2,7 +2,7 @@
   <b-overlay :show="loading" spinner-large rounded="sm">
     <b-card
       title="Tags"
-      class="tag-picker p-3 shadow"
+      class="tag-picker p-3"
       @mouseover="hover = true"
       @mouseleave="hover = false"
     >
@@ -129,9 +129,9 @@ export default {
       // no error handling, we won't await this
       // to save on loading time :)
       removeUserTag(this.userUuid, tagUuid);
-      const deleteIdx = this.userTags.indexOf(
-        (tag) => tag.uuid === tagUuid
-      );
+      const deleteIdx = this.userTags.findIndex((tag) => {
+        return tag.uuid === tagUuid;
+      });
       this.userTags.splice(deleteIdx, 1);
 
       this.loading = false;
@@ -162,10 +162,11 @@ export default {
 
 .tag-picker {
   border: none;
-  min-height: 160px;
+  min-height: 9.5rem;
 
   .card-title {
     font-weight: 700;
+    margin-bottom: 0;
   }
 
   .tags {
@@ -181,13 +182,13 @@ export default {
     align-content: center;
     justify-content: center;
     background: $offwhite;
-    width: 38px;
+    width: 2.375rem;
     color: $lightgray;
     border: 1px solid $offwhite;
     padding: 0.125rem;
     cursor: pointer;
     transition: 0.3s ease;
-    height: 38px;
+    height: 2.375rem;
 
     &:hover {
       color: $medpurple;
@@ -209,12 +210,12 @@ export default {
     input {
       border-radius: 1.6rem;
       border: 1px solid $lightgray;
-      height: 38px;
-      width: 250px;
+      height: 2.375;
+      width: 15.625rem;
     }
 
     ul {
-      width: 250px;
+      width: 15.625rem;
       border: 1px solid $purple;
       position: absolute;
       top: 3rem;
@@ -246,7 +247,7 @@ export default {
           margin-bottom: 0;
           letter-spacing: 1px;
           line-height: 1.75rem;
-          font-size: 14px;
+          font-size: 0.875rem;
           color: $medpurple;
         }
 
@@ -272,5 +273,9 @@ span.spinner-border {
   border-top-color: $purple;
   border-bottom-color: $purple;
   border-left-color: $purple;
+}
+
+div.card-body {
+  padding: 0.75rem 0.75rem 0.25rem 0.75rem;
 }
 </style>
